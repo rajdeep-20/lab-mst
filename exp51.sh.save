@@ -1,0 +1,9 @@
+echo "enter 2 number"
+read num1  num2
+sum=$((num1 + num2))
+echo "Sum of two numbers is =$sum"
+dif=$((num1-num2))
+echo"Differnce=$dif"
+p=$((num1*num2))
+echo"product=$p
+"
