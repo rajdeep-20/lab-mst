@@ -1,0 +1,51 @@
+create table mst1(student_id int primary key , student_name varchar(100),age int , heigth int unique);
+
+
+
+insert into mst1 values
+(1001 , 'Raj' ,      21 , 168),
+(1002 , 'Deep' ,     20 , 178),
+(1003 , 'Daivik' ,   22 , 163),
+(1004 , 'Debarghya', 21 , 179),
+(1005 , 'Aditi' ,    22 , 160),
+(1006 , 'Sneha' ,    20 , 165),
+(1007 , 'Harsh' ,    20 , 175),
+(1008 , 'Khushi' ,   21 , 171),
+(1009 , 'Anushka' ,  20, 170),
+(1010 , 'Yash' ,     22 , 169);
+
+
+
+update command
+update  mst1 set heigth = 200 where student_id =1001;
+
+
+adding not null constraint 
+alter table mst1 modify age int not null;
+
+
+
+DISTINCT command:
+select distinct(age) from mst1;
+
+
+select * from mst1 where age = 20 and heigth = 170;
+
+select * from mst1 where age = 20 or heigth = 170;
+
+
+
+
+
+count command:
+select count(*) from mst1;
+select count(student_name) from mst1;
+
+
+order by clause:
+select * from mst1 order by heigth;
+
+
+alter table mst1 modify student_id int primary key;
+
+

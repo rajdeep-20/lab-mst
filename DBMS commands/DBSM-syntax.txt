@@ -1,0 +1,253 @@
+create :
+create Table <Table_name>;
+
+
+Drop : #delete complete Table
+drop table <Table_name>
+
+
+insert:
+insert into <Table_name>
+Values ( val1 , val2 , val3 , val4 , val5 , val6 , val7);
+
+
+
+in multiple columns;
+insert into <Table_name>
+(col1 , col2 , col3)
+Values (val1 , val2 , val3 );
+
+
+delete command :
+Delete from <Table_name> where <condition>;
+
+
+
+#Update command :
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+
+
+#where clause:
+delete from javapoint where Author_name = "Sonoo";
+
+
+DISTINCT commnands:
+
+select DISTINCT <colomn> from  <Table_name>;      
+
+
+
+
+count commnand:
+
+1) with and operator:
+select count(<column_name>) from <Table name> where <condition1> and <condition2>;  
+
+2) with oroperator:
+select count(<column_name>) from <Table name> where <condition1> or <condition2>;  
+
+distinct :
+select DISTINCT <colomn_name> from  <Table_name>;
+
+
+
+order by:
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1 [ASC];
+
+
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1 [DESC];
+
+
+between:
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+
+
+unique constraints:
+
+CREATE TABLE example_table (
+    column1 INT,
+    column2 VARCHAR(50),
+    CONSTRAINT unique_constraint_name UNIQUE (column1, column2)
+);
+
+
+primary key:
+CREATE TABLE example_table (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+);
+
+----or----
+
+ALTER TABLE existing_table
+ADD PRIMARY KEY (id);
+
+
+
+
+
+foreign key:;
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+
+unique constraints :
+
+CREATE TABLE example_table (
+    column1 INT,
+    column2 VARCHAR(50),
+    CONSTRAINT unique_constraint_name UNIQUE (column1, column2)
+);
+
+----or----
+
+ALTER TABLE existing_table
+ADD CONSTRAINT unique_constraint_name UNIQUE (column1, column2);
+
+
+NOT NULL :
+
+
+CREATE TABLE example_table (
+    column1 INT NOT NULL,
+    column2 VARCHAR(50) NOT NULL
+);
+
+----or----
+
+ALTER TABLE existing_table
+MODIFY column1 INT NOT NULL;
+
+
+
+Alter commands:
+
+1: delete a colomn:
+ALTER TABLE table_name
+ADD column_name data_type;
+
+
+2: Drop a column from an existing table:
+
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+
+3:Modify the data type of a column:
+
+ALTER TABLE table_name
+MODIFY COLUMN column_name new_data_type;
+
+4: Add a primary key to an existing table:
+
+ALTER TABLE table_name
+ADD PRIMARY KEY (column_name);
+
+
+5: Add a foreign key to an existing table:
+ALTER TABLE table_name
+ADD CONSTRAINT fk_constraint_name
+FOREIGN KEY (column_name)
+REFERENCES referenced_table(referenced_column);
+
+
+6: Add a unique constraint to an existing table:
+
+ALTER TABLE table_name
+ADD CONSTRAINT unique_constraint_name
+UNIQUE (column_name);
+
+7: Rename a table:
+ALTER TABLE old_table_name
+RENAME TO new_table_name;
+
+
+8: Rename a column in a table:
+
+ALTER TABLE table_name
+RENAME COLUMN old_column_name TO new_column_name;
+
+
+9: Drop a primary key constraint:
+
+ALTER TABLE table_name
+DROP PRIMARY KEY;
+
+TCL (transaction control language) commands:
+
+1: COMMIT:
+COMMIT;
+
+2: ROLLBACK:
+
+ROLLBACK;
+
+3: SAVEPOINT 
+SAVEPOINT savepoint_name;
+
+4: ROLLBACK TO SAVEPOINT:
+
+ROLLBACK TO SAVEPOINT savepoint_name;
+
+
+5: RELEASE SAVEPOINT:
+
+RELEASE SAVEPOINT savepoint_name;
+
+
+
+
+joins:
+inner join:
+    SELECT column_names
+    FROM table1
+    INNER JOIN table2
+    ON table1.column_name = table2.column_name;
+    
+
+left :
+    SELECT column_names
+    FROM table1
+    LEFT JOIN table2
+    ON table1.column_name = table2.column_name;
+
+right :
+    SELECT column_names
+    FROM table1
+    RIGHT JOIN table2
+    ON table1.column_name = table2.column_name;
+
+
+full :
+    SELECT column_names
+    FROM table1
+    FULL JOIN table2
+    ON table1.column_name = table2.column_name;
+
+cross join :
+    SELECT column_names
+    FROM table1
+    CROSS JOIN table2;
+    
+self join :
+    SELECT column_names
+    FROM table1 AS alias1
+    JOIN table1 AS alias2
+    ON alias1.column_name = alias2.column_name;
+    
